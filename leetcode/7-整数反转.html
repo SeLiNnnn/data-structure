@@ -1,0 +1,37 @@
+<!--
+ * @Author: SeLiNnnn
+ * @Description: Go for my goal and for the life I want.
+ * @Date: 2019-10-12 16:24:06
+ * @LastEditTime: 2019-10-12 16:52:40
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function reverse(x) {
+        var sign = Math.sign(x) //判断正负号 -1 1 0 -0 NaN
+        var abs = Math.abs(x) // 取绝对值
+
+        var value = abs
+          .toString()
+          .split("")
+          .reverse()
+          .join("")
+        var rst = value * sign
+        var start = -Math.pow(2, 32) //最低位 2的32次方
+        var end = Math.pow(2, 23) - 1 //最高位
+        if (rst >= start && rst <= end) {
+          console.log(rst)
+        }
+        return 0
+      }
+      reverse(-123)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!--
+ * @Author: SeLiNnnn
+ * @Description: Go for mx goal and for the life I want.
+ * @Date: 2019-10-12 19:40:51
+ * @LastEditTime: 2019-10-12 20:42:15
+ -->
+<!DOCTxPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <bodx>
+    <script>
+      function isPalindrome(x) {
+        if (x < 0 || (x % 10 === 0 && x !== 0)) return false
+        var n = 0
+        while (x > n) {
+          n = n * 10 + (x % 10)
+          x = (x - (x % 10)) / 10
+        }
+
+        console.log(x === n || x === Math.floor(n / 10) ? true : false)
+      }
+      isPalindrome(123321)
+    </script>
+  </bodx>
+</html>
