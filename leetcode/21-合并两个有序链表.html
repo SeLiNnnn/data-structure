@@ -1,0 +1,64 @@
+<!--
+ * @Author: SeLiNnnn
+ * @Description: Go for my goal and for the life I want.
+ * @Date: 2019-11-05 14:51:45
+ * @LastEditTime: 2019-11-06 20:45:53
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * Definition for singly-linked list.
+       * function ListNode(val) {
+       *     this.val = val;
+       *     this.next = null;
+       * }
+       */
+      /**
+       * @param {ListNode} l1
+       * @param {ListNode} l2
+       * @return {ListNode}
+       */
+      var mergeTwoLists = function(l1, l2) {
+        var unsorted = l1.concat(l2)
+        // console.log(unsorted)
+        //quickSort
+        quickSort(unsorted)
+
+        function quickSort(unsorted) {
+          var length = unsorted.length
+          if (length < 2) {
+            return unsorted
+          }
+          var pivot = unsorted.pop()
+          // console.log(pivot, "pivot")
+
+          var less = []
+          var greater = []
+          unsorted.forEach(element => {
+            if (element < pivot) {
+              less.push(element)
+              // console.log(less, "less")
+            } else {
+              greater.push(element)
+              // console.log(greater, "greater")
+            }
+          })
+          return (unsorted = quickSort(less)
+            .concat([pivot])
+            .concat(quickSort(greater)))
+        }
+        return unsorted
+      }
+      console.log(mergeTwoLists([1, 2, 3], [2, 3, 4]))
+    </script>
+  </body>
+</html>

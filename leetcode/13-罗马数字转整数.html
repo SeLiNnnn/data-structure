@@ -1,0 +1,40 @@
+<!--
+ * @Author: SeLiNnnn
+ * @Description: Go for my goal and for the life I want.
+ * @Date: 2019-10-14 10:22:30
+ * @LastEditTime: 2019-10-17 19:30:41
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Roma(n) {
+        var hashNum = {
+          I: 1,
+          V: 5,
+          X: 10,
+          L: 50,
+          C: 100,
+          D: 500,
+          M: 1000
+        }
+
+        var rst = 0
+        for (let i = 0, length = n.length; i < length; i++) {
+          hashNum[n[i]] < hashNum[n[i + 1]]
+            ? (rst -= hashNum[n[i]])
+            : (rst += hashNum[n[i]])
+        }
+        console.log(rst)
+        return rst
+      }
+      Roma("MCMXCIV")
+    </script>
+  </body>
+</html>

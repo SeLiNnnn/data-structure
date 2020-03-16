@@ -1,0 +1,53 @@
+<!--
+ * @Author: SeLiNnnn
+ * @Description: Go for my goal and for the life I want.
+ * @Date: 2019-10-26 20:55:59
+ * @LastEditTime: 2019-11-06 20:29:35
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //快速排序
+      function quickSort(unsorted) {
+        let length = unsorted.length
+        if (length < 2) {
+          return unsorted
+        }
+
+        let pivot = unsorted.pop()
+        console.log(pivot, "基准")
+
+        let less = []
+        let greater = []
+
+        //为什么会溢出？？？？
+        // for (let i = 0; i < length; i++) {
+        //   if (unsorted[i] < pivot) {
+        //     minunsorted.push(unsorted[i])
+        //   } else {
+        //     maxunsorted.push(unsorted[i])
+        //   }
+        // }
+        unsorted.forEach(element => {
+          if (element < pivot) {
+            less.push(element)
+          } else {
+            greater.push(element)
+          }
+        })
+
+        return quickSort(less)
+          .concat([pivot])
+          .concat(quickSort(greater))
+      }
+      console.log(quickSort([1, 13, 29, 4, 15, 0, 32]))
+    </script>
+  </body>
+</html>
